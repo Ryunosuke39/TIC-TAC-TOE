@@ -24,8 +24,19 @@ class TicTacToe:
             # element is (" ", " ", " ")
             # " "|" "|" "
             print("| " + " | ".join(row) + " |")
+    
+    # this is satic method because we don't need to pass in self
+    @staticmethod
+    def print_board_nums():
+        # 0 | 1 | 2 | etc tell us what number corresponds to what box
+        number_board = [[str(i) for i in range(j*3, (j+1)*3)] for j in range(3)]
+        for row in number_board:
+            print("| " + " | ".join(row) + " |")
 
-
-
-test = TicTacToe()
-test.print_board()
+    def available_moves(self):
+        # return [] list
+        moves = []
+        # enumerate will create list and assign tuple that have (the index, the value) at that index
+        # ["x", "x", "0"] --> [ (0, "x"), (1, "x"), (2, "O") ]
+        for (i, x) in enumerate(self.board):
+            #42:09
