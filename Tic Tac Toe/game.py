@@ -26,6 +26,7 @@ class TicTacToe:
             print("| " + " | ".join(row) + " |")
     
     # this is satic method because we don't need to pass in self
+    # indipendent method that does not affected by the sates of it's object(instatnce), cost effiencent 
     @staticmethod
     def print_board_nums():
         # 0 | 1 | 2 | etc tell us what number corresponds to what box
